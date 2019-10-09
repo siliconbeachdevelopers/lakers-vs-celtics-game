@@ -1,0 +1,163 @@
+html{
+    border-width: 10px;
+    border-style: solid;
+    border-image: black;
+}
+body {
+    background-image: url("../images/basketball.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+.logo1{
+    font-family:'Galada', cursive;
+    color: #FDB927;;
+    font-size: 150px;
+    text-shadow: 5px 5px 2px rgb(0,0,0,1);
+    margin-left: 200px;
+    
+}
+
+.logo3{
+    font-family:'Galada', cursive;
+    color: #007A33;;
+    font-size: 150px;
+    text-shadow: 5px 5px 2px rgb(0,0,0,1);
+}
+
+h1 {
+    position: absolute;
+    margin-left: 200px;
+    z-index: -1;
+}
+
+#lakerscontainer {
+    display: flex;
+    margin-left: 25px;
+   
+}
+
+#court {
+    display: flex;
+    justify-content: space-around;
+}
+
+#celticscontainer {
+    display: flex;
+    margin-right: 25px;
+}
+
+.laker {
+    display: block;
+    width: 125px;
+    height: 175px;
+    margin-top: 10px;
+    border: 2px solid purple;
+    
+}
+
+.celtic {
+    display: block;
+    width: 125px;
+    height: 175px;
+    margin-top: 10px;
+    border: 2px solid green;
+    } 
+    
+.lakers2 {
+   margin-right: 100px;
+   margin-top: 100px;
+  
+  
+}
+
+#card2{
+   padding-top: 30px
+}
+#card3{
+    padding-top:30px
+}
+.lakers3 {
+    margin-right: 100px;
+    margin-top: 250px;
+   
+ }
+
+
+
+
+
+.celtics2{
+    margin-left: 100px;
+    margin-top: 250px
+
+}
+.celtics3{
+    margin-left: 100px;
+    margin-top: 100px
+
+}
+#cCard4{
+    padding-top: 30px;
+ }
+ #cCard5{
+     padding-top:30px;
+ }
+ .button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  
+  .button:hover {
+    background-color: black; /* Green */
+    color: white;
+  }
+  
+  #rings, #points, #allstars{
+    background: rgb(153, 51, .5); 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border: 2px solid black;
+}
+#lakersstat{
+    font-size: 40px;
+}
+
+#celticsstat{
+  font-size: 40px;
+}   
+
+#whoscored{
+    display: inline-block;
+    position: absolute;
+    font-size: 50px;
+    margin-left:550px;
+    color:linear-gradient ( #414345);
+    margin-bottom: 150px;
+   
+    
+    
+} 
+
+#points{
+    margin-left: 375px;
+}
+#allstars {
+    margin-left: 350px;
+}
+#rings{
+    margin-left: 200px;
+}
+#scoreText{
+    font-size: 35px;
+    margin-left: 350px;
+}
