@@ -130,6 +130,7 @@ function createBoard() {
     let cCardInPlay=[];
 }
 //This function resets the board after each quarter============================
+//testing purposes
 function resetBoard() {
     
     for (let i=1; i<6; i++) {
