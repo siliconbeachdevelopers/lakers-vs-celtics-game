@@ -1,5 +1,5 @@
 const lakersArray = [
-    {name: "Kareem Abdul-Jabbar", championships: 6,  points: 38387, allstars: 15, image: "../images/lakers/kareem.jpg", score: 2}, 
+    {name: "Kareem Abdul-Jabbar", championships: 6,  points: 38787, allstars: 15, image: "../images/lakers/kareem.jpg", score: 2}, 
     {name: "Magic Johnson", championships: 5,  points: 17707, allstars: 12, image: "../images/lakers/magic1.png", score: 2},
     {name: "Kobe Bryant", championships: 5,  points: 33643, allstars: 18,  image: "../images/lakers/kobebryant.jpg", score: 2},
     {name: "Jerry West", championships: 5,  points: 25192, allstars: 14, image: "../images/lakers/jerrywest.jpg", score: 2},
@@ -11,9 +11,9 @@ const lakersArray = [
     {name: "George Mikan",championships: 7,  points: 10156, allstars: 4, image: "../images/lakers/mikan.png", score: 2},
     {name: "Elgin Baylor",championships: 1,  points: 23149, allstars: 11, image: "../images/lakers/baylor.jpeg", score: 2},
     {name: "Wilt Chamberlain",championships: 2 ,  points: 31419, allstars: 13, image: "../images/lakers/wilt.jpg", score: 2},
-    {name: "3 pointer",championships: 100, points: 100, allstars: 100, image:"../images/lakers/magicbird.jpg", score: 3}, 
-    {name: "Block", championships: 100, points: 100, allstars: 100, image: "../images/lakers/wildcard.jpg", score: 2 },
-    {name: "Dunk", championships: 100, points: 100, allstars: 100, image:  "../images/lakers/wildcard.jpg", score: 2 },
+    {name: "3 pointer",championships: 100, points: 100000, allstars: 100, image:"../images/lakers/magicbird.jpg", score: 3}, 
+    {name: "Block", championships: 100, points: 100000, allstars: 100, image: "../images/lakers/wildcard.jpg", score: 2 },
+    {name: "Dunk", championships: 100, points: 100000, allstars: 100, image:  "../images/lakers/wildcard.jpg", score: 2 },
     
 
 ]
@@ -31,9 +31,9 @@ const celticsArray = [
     {name: "Dave Cowens",championships:2,  points: 13516, allstars: 8, image: "../images/celtics/cowens.jpeg", score: 2}, 
     {name: "Tom Heinsohn",championships:7,  points: 12194, allstars: 6, image: "../images/celtics/heinsohn.jpeg", score: 2}, 
     {name: "Kevin Garnett",championships:1,  points: 26071, allstars: 15, image: "../images/celtics/garnett.jpg", score: 2},
-    {name: "3 pointer", championships: 100, points: 100, allstars: 100, image: "../images/lakers/magicbird.jpg", score: 3},
-    {name: "Block", championships: 100, points: 100, allstars: 100, image: "../images/celtics/celticblockcard.jpg", score: 2},
-    {name: "Dunk", championships: 100, points: 100, allstars: 100, image:  "../images/celtics/celticdunk.jpg", score: 2},
+    {name: "3 pointer", championships: 100, points: 100000, allstars: 100, image: "../images/lakers/magicbird.jpg", score: 3},
+    {name: "Block", championships: 100, points: 100000, allstars: 100, image: "../images/celtics/celticblockcard.jpg", score: 2},
+    {name: "Dunk", championships: 100, points: 100000, allstars: 100, image:  "../images/celtics/celticdunk.jpg", score: 2},
     //{name: "celticcardback",championships: 99, image: "../images/celtics/celticcardback.jpg"}
 
 
@@ -91,7 +91,6 @@ function createBoard() {
         } else {
             document.getElementById(`card${i}`).appendChild(lakerCard)
         }
-
     }
 
     for (let i=1; i<6; i++) {
@@ -106,31 +105,8 @@ function createBoard() {
         } else {
             document.getElementById(`cCard${i}`).appendChild(celticsCard)
         }
-
     }
-
-
-}
-
-function resetBoard() {
     
-    for (let i=1; i<6; i++) {
-
-        let lCard=document.getElementById(`card${i}`);
-        let cCard=document.getElementById(`cCard${i}`);
-        
-        lCard.removeChild(lCard.childNodes[0]);
-        cCard.removeChild(cCard.childNodes[0]);
-
-        createBoard();
- }
-}
-
-function startGame() {
-
-    gameObject.gameType=this.getAttribute("data-gameType");
-    console.log("Game Type: " + gameObject.gameType);
-
     let lakerTemp=lakersArray.slice();
     let celticsTemp=celticsArray.slice();
 
@@ -144,14 +120,36 @@ function startGame() {
 
         celticsGameArray[i]=celticsTemp[cRandom];
         celticsTemp.splice(cRandom,1);
-
     }
 
-    // console.log(lakersGameArray);
-    // console.log (" ");
-    // console.log(celticsGameArray);
-    // console.log (" ");
+    let lCardInPlay=[];
+    let cCardInPlay=[];
+}
 
+function resetBoard() {
+    
+    for (let i=1; i<6; i++) {
+
+        let lCard=document.getElementById(`card${i}`);
+        let cCard=document.getElementById(`cCard${i}`);
+        
+        lCard.removeChild(lCard.childNodes[0]);
+        cCard.removeChild(cCard.childNodes[0]);
+    }
+        
+    createBoard();
+    document.getElementById("quarterdiv").innerText="Quarter: " + gameObject.quarter;
+
+}
+        
+
+function startGame() {
+
+    if (gameObject.allowClick==false) return;
+
+    gameObject.gameType=this.getAttribute("data-gameType");
+    console.log("Game Type: " + gameObject.gameType);
+    
     gameObject.turn="player1";
     gameObject.allowClick=true;
     gameObject.quarter=1;
@@ -160,66 +158,64 @@ function startGame() {
     gameObject.flipCount=0;
     gameObject.cardCount=0;
 
-    let lCardInPlay=[];
-    let cCardInPlay=[];
-    
-
-
+    document.getElementById("quarterdiv").innerText="Quarter: " + gameObject.quarter;
 }
-function scoreAlert(){
 
-}
 function clickCard() {
 
     if(gameObject.allowClick !== true) return;
     
-    let flipped=this.getAttribute("data-flipped");
-    let di=this.getAttribute("data-index");
-    let team=di.substring(0,1);
-    let index=di.substring(1);
+    let flipped = this.getAttribute("data-flipped");
+    let di = this.getAttribute("data-index");
+    let team = di.substring(0,1);
+    let index = di.substring(1);
 
     // console.log("Flipped: " + flipped);
-    if (flipped=="true") return;
+    if (flipped == "true") return;
     
-    if (team=="l" && gameObject.turn !== "player1") return;
-    if (team=="c" && gameObject.turn !== "player2") return;
+    if (team == "l" && gameObject.turn !== "player1") return;
+    if (team == "c" && gameObject.turn !== "player2") return;
     // console.log ("player: " + gameObject.turn + "  /  Team: " + team);
 
-    let lc=lakersGameArray[index];
-    let cc=celticsGameArray[index];
+    let lc = lakersGameArray[index];
+    let cc = celticsGameArray[index];
     let compText;
-
-    if(team=="l") {
-        this.src=lakersGameArray[index].image;
+    
+    if(team == "l") {
+        this.src = lakersGameArray[index].image;
         lCardInPlay.push(lakersGameArray[index]);
         
-        if (gameObject.gameType=="rings") {
-            compText=lc.championships + " Rings";
-        } else if (gameObject.gameType=="points") {
+        if (gameObject.gameType == "rings") {
+            compText = lc.championships + " Rings";
+        } else if (gameObject.gameType == "points") {
             compText=lc.points + " Points";
-        } else if(lCardInPlay === '3 pointer')  {
-            compText=lc.allstars + "3 pointer" + "";
-            
         } else  {
-            compText=lc.allstars + " All Stars";}
+            compText=lc.allstars + " All Stars";
+        }
 
+        //DOES NOT DISPLAY POINTS/RINGS, ETC. WHEN WILD CARD IS SELECTED=========================
+        if(lc.name == "3 pointer" || lc.name == "Block" || lc.name == "Dunk") compText="";
         
-        console.log(lc.name + " has " + compText);
+        console.log(lc.name + " " + compText);
         document.getElementById('lakersstat').innerText = lc.name + " " + compText
         gameObject.innerHTML=compText;
-    setTimeout(() => {document.getElementById('lakersstat').innerHTML="";}, 4000);
+        setTimeout(() => {document.getElementById('lakersstat').innerHTML="";}, 4000);
 
     } else {
-        this.src=celticsGameArray[index].image;
+        this.src = celticsGameArray[index].image;
         cCardInPlay.push(celticsGameArray[index]);
 
-        if (gameObject.gameType=="rings") {
-            compText=cc.championships + " Rings";
-        } else if (gameObject.gameType=="points") {
-            compText=cc.points + " Points";
+        if (gameObject.gameType == "rings") {
+            compText = cc.championships + " Rings";
+        } else if (gameObject.gameType == "points") {
+            compText = cc.points + " Points";
         } else {
-            compText=cc.allstars + " All Stars";
+            compText = cc.allstars + " All Stars";
         }
+
+        //DOES NOT DISPLAY POINTS/RINGS, ETC. WHEN WILD CARD IS SELECTED=========================
+        if(cc.name == "3 pointer" || cc.name == "Block" || cc.name == "Dunk") compText="";
+
         console.log(cc.name + "" + compText);
         document.getElementById('celticsstat').innerText = cc.name + " " + compText
         gameObject.innerHTML=compText;
@@ -228,22 +224,25 @@ function clickCard() {
 
     gameObject.flipCount++;
     gameObject.cardCount++;
+    document.getElementById("quarterdiv").innerText="";
 
     
 
     if (gameObject.flipCount<2) {
         
-        if (gameObject.turn=="player1") {
-            gameObject.turn="player2";
+        if (gameObject.turn == "player1") {
+            gameObject.turn = "player2";
         } else {
-            gameObject.turn="player1";
+            gameObject.turn = "player1";
         }
 
     } else {
-        gameObject.flipCount=0;
+        gameObject.flipCount = 0;
         checkScore();
     }
   }
+
+
 
 function checkScore() {
 
@@ -252,18 +251,18 @@ function checkScore() {
     let comp2 = null
 
     
-    if (gameObject.gameType=="rings") {
+    if (gameObject.gameType == "rings") {
         comp1=lCardInPlay[0].championships;
         comp2=cCardInPlay[0].championships;
         let extra=" rings";
-    } else if (gameObject.gameType=="points") {
-        comp1=lCardInPlay[0].points;
-        comp2=cCardInPlay[0].points;
+    } else if (gameObject.gameType == "points") {
+        comp1 = lCardInPlay[0].points;
+        comp2 = cCardInPlay[0].points;
         let extra = " points";
     } else {
-        comp1=lCardInPlay[0].allstars;
-        comp2=cCardInPlay[0].allstars;
-        let extra=" all stars";
+        comp1 = lCardInPlay[0].allstars;
+        comp2 = cCardInPlay[0].allstars;
+        let extra = " all stars";
     }
 
   let scoreText = null
@@ -271,33 +270,91 @@ function checkScore() {
         scoreText="Lakers Score " + lCardInPlay[0].score + " points!";
         gameObject.player1Score+=lCardInPlay[0].score;
         gameObject.turn="player1";
-    } else {
+    } else if(comp1 < comp2) {
         scoreText="Celtics Score " + cCardInPlay[0].score + " points!";
         gameObject.player2Score+=cCardInPlay[0].score;
         gameObject.turn="player2";
         
+    } else {
+        scoreText=" No Score";   //ADDED FOR TIE CARDS
+        if (gameObject.turn == "player1") {
+            gameObject.turn = "player2";
+        } else {
+            gameObject.turn="player1";
+        }
     }
 
-    console.log("Current Score: Lakers - " + gameObject.player1Score + " / Celtics - " + gameObject.player2Score);
-    document.getElementById("scoreText").innerText = "Score: Lakers - " + gameObject.player1Score + " / Celtics - " + gameObject.player2Score
+    console.log("Current Score: Lakers - " + gameObject.player1Score + "  Celtics - " + gameObject.player2Score);
+    document.getElementById("scoreText").innerText = "Score: Lakers - " + gameObject.player1Score + "  Celtics - " + gameObject.player2Score
     lCardInPlay=[];
     cCardInPlay=[];
     
     whoScored.innerHTML=scoreText;
-    setTimeout(() => {document.getElementById("whoscored").innerHTML="";}, 7000);
+    setTimeout(() => {document.getElementById("whoscored").innerHTML="";}, 5000);
 
-    // if (gameObject.cardCount=10) {
-    //     gameObject.quarter++;
-    //     if (gameObject.quarter>4) {
-    //         console.log("Final Score: Lakers - " + gameObject.player1Score + " / Celtics - " + gameObject.player2Score);
-    //     }
+//CHECK FOR QUARTER CHANGE/GAME OVER=====================
+
+    if (gameObject.cardCount==10) {
+        gameObject.quarter++;
+        gameObject.cardCount=0;
         
-    // }
+        if (gameObject.quarter<5) {
+
+            console.log("Begin Quarter " + gameObject.quarter);
+            setTimeout(resetBoard(), 2000);
+
+        } else {
+            console.log("Final Score: Lakers - " + gameObject.player1Score + "      Celtics - " + gameObject.player2Score);
+
+            let divWidth=500; let winWidth=window.innerWidth;
+            let divHeight=200; let winHeight=window.innerHeight;
+
+            gameOverDiv=document.createElement("div");
+            gameOverDiv.id="gameoverdiv";
+
+// CHANGE CSS STYLING HERE FOR GAME OVER DIV AND BUTTON==============================================
+
+            gameOverDiv.style.cssText="position: absolute; border: 3px solid blue;"
+            gameOverDiv.style.cssText+="width: " + divWidth + "px; height: " +divHeight + "px;";
+            gameOverDiv.style.cssText+="font-size: 34px; background-color: white; text-align: center;";
+            gameOverDiv.style.cssText+="padding-top: 50px;";
+
+            gameOverDiv.innerHTML="Final Score: Lakers - " + gameObject.player1Score + " / Celtics - " + gameObject.player2Score;
+            gameOverDiv.innerHTML+="<br><br>";
+
+            let x=winWidth/2-divWidth/2 + "px;";
+            let y=winHeight/2-divHeight/2 + "px;";
+
+            gameOverDiv.style.cssText+="left: " + x +"; top: " + y;
+
+            document.body.appendChild(gameOverDiv);
+
+            gameOverButton=document.createElement("button");
+            gameOverButton.innerHTML="Ok";
+            gameOverButton.addEventListener("click", startNewGame);
+            gameOverButton.style.cssText="font-size: 24px;";
+            gameOverDiv.appendChild(gameOverButton);
+
+        }
+
+    }
+}
+
+function startNewGame() {
+    
+    gameObject={};
+    
+    let remove=document.getElementById("gameoverdiv");
+    remove.parentNode.removeChild(remove)
+    document.getElementById("scoreText").innerText = "";
+
+    resetBoard();
+
 }
 
 function rnd(lower, upper) {
-const range = upper - lower + 1;
-return Math.floor(Math.random() * range + lower);
+    const range = upper - lower + 1;
+    return Math.floor(Math.random() * range + lower);
 }
 
       

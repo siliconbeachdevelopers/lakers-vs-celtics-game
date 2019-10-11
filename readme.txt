@@ -6,18 +6,19 @@ Lakers vs Celtics
 Cards consist of individual NBA players cards 
 Lakers and celtics each have 12 player cards in their stack total
 
-Each card holds the value of players rings,career pointsq  \c\
+Each card holds the value of players rings,career points
 ,all-stars.
 Each game type can be selected going head head on one of these statistcal areas. Select game type. rings,career points, all-star apperances.
 It begins with the game board.
-The logic will randomly select 5 cards down on each players side. 1pg, 1sg, 1sf, 1pf, 1c, head to head.
+The logic will randomly select 5 cards down on each players side. 
 Player one will flip one card then Player 2 will flip one card.
 Lets say the game selected is who has more rings?
 For instance :Player one flips pg fisher[5rings] player 2 flips pg cousy[7rings]. cousy scores a 2pointer. So on and so forth for all 5 cards.
-After all 5 cards are flip this concludes the end of the 1st quarter, who ever has more points wins the quarter.
+Who ever scores gets next move to pick a card.
+After all 5 cards are flip this concludes the end of the 1st quarter.
 All cards are put back in the stack and reshuffled every quarter.
 There will be four quarters(4 sets of 5 cards flipped from each side)
-The team that has the most points at the end of the game wins. 
+The team that has the most points at the end of 4 quartes wins. 
 The wild card is the bird vs magic card that trumps all
 There are ramdom 3 steal cards, 3 3pointer cards in each players deck.
 If a player flips a steal or block card your stats don't count opposing player wins match up.
@@ -28,47 +29,9 @@ If a player flips a dunk card. "you got dunked on!" opposing players card is nul
 
 
 
-Celtics Players
-
-Cousy rings[6]
-Russell rings[11]
-Parrish rings[4]
-birdr ings[3]
-Johnson rings[3]
-Havlchik rings[8]
-Garrnet rings[1]
-Peirce rings[1]
-Jones rings[10]
-Mcahale rings[3]
-Cowen rings[2]
-Heinson rings[7]
-
-Lakers Players
-
-magic rings[5]
-shaq rings[4]
-kobe rings[5]
-kareem rings[6]
-worthy rrings[3]
-scott rings[3]
-fisher rings[5]
-horry rings[7]
-wilt rings[2]
-baylor rings[0]
-mikan rings[5]
-rambis rings[5]
-west[5]
 
 
 
-still need to create choose game buttons 3 options
-render stat of each player.
-compare both players stats
-render who scored 2 or 3 points
-render running total on scoreboard
 
-
-need buttons for game choice
-need H1 label Lakers Vs Celtics
 
 
