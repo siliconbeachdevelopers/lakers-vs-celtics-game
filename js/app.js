@@ -43,23 +43,25 @@ const celticsArray = [
 const lakerContainer=document.getElementById("lakerscontainer");
 const celticsContainer=document.getElementById("celticscontainer");
 
+// Three Start Buttons=========================================
+// RINGS START BUTTTON=============
 const btnRings=document.getElementById("rings");
 btnRings.addEventListener("click", startGame);
 btnRings.setAttribute("data-gameType", "rings");
-
+//POINTS START BUTTON================
 const btnPoints=document.getElementById("points");
 btnPoints.addEventListener("click", startGame);
 btnPoints.setAttribute("data-gameType", "points");
-
+//PONTS START BUTTON================
 const btnAllStars=document.getElementById("allstars");
 btnAllStars.addEventListener("click", startGame);
 btnAllStars.setAttribute("data-gameType", "allstars");
-
+// THE 5 CARDS TO START THE GAME WILL BE HELD HERE================
 let lakersGameArray=[];     
 let celticsGameArray=[];   
 let lakerChampionships = null;
 let celticChampionships = null; 
-
+//Two Card Backs to start game=========================================
 let lakerLogo="../images/lakers/logo.jpg";
 let celticsLogo="../images/celtics/celticcardback.jpg";
 
@@ -73,12 +75,14 @@ let gameObject={};
     //.flipCount
     //.cardCount
 
-
+//Empty array to hold the randomly selected cards=========================
 let lCardInPlay=[];
 let cCardInPlay=[];
 
-function createBoard() {
 
+// This is the start board that selects five cards face down.=====================
+function createBoard() {
+// 5 for lakers
     for (let i=1; i<6; i++) {
         const lakerCard=document.createElement("img");
         lakerCard.addEventListener("click", clickCard);
@@ -92,7 +96,7 @@ function createBoard() {
             document.getElementById(`card${i}`).appendChild(lakerCard)
         }
     }
-
+// 5 for Celtics
     for (let i=1; i<6; i++) {
         const celticsCard=document.createElement("img");
         celticsCard.addEventListener("click", clickCard);
@@ -106,7 +110,7 @@ function createBoard() {
             document.getElementById(`cCard${i}`).appendChild(celticsCard)
         }
     }
-    
+    // This is three random containers to randomize the card selection=================
     let lakerTemp=lakersArray.slice();
     let celticsTemp=celticsArray.slice();
 
@@ -125,7 +129,7 @@ function createBoard() {
     let lCardInPlay=[];
     let cCardInPlay=[];
 }
-
+//This function resets the board after each quarter============================
 function resetBoard() {
     
     for (let i=1; i<6; i++) {
@@ -142,7 +146,7 @@ function resetBoard() {
 
 }
         
-
+//Upon start button click this will initialize the game from 0==============
 function startGame() {
 
     if (gameObject.allowClick==false) return;
@@ -160,7 +164,7 @@ function startGame() {
 
     document.getElementById("quarterdiv").innerText="Quarter: " + gameObject.quarter;
 }
-
+// This retrives the card click information===========
 function clickCard() {
 
     if(gameObject.allowClick !== true) return;
@@ -177,10 +181,13 @@ function clickCard() {
     if (team == "c" && gameObject.turn !== "player2") return;
     // console.log ("player: " + gameObject.turn + "  /  Team: " + team);
 
+
+
+    // Lakers and Celtics Stats get selected and rendered to the screen.===============
     let lc = lakersGameArray[index];
     let cc = celticsGameArray[index];
     let compText;
-    
+    //Lakers card section=========
     if(team == "l") {
         this.src = lakersGameArray[index].image;
         lCardInPlay.push(lakersGameArray[index]);
@@ -195,12 +202,13 @@ function clickCard() {
 
         //DOES NOT DISPLAY POINTS/RINGS, ETC. WHEN WILD CARD IS SELECTED=========================
         if(lc.name == "3 pointer" || lc.name == "Block" || lc.name == "Dunk") compText="";
-        
+        //Lakers render and set time out======== 
         console.log(lc.name + " " + compText);
         document.getElementById('lakersstat').innerText = lc.name + " " + compText
         gameObject.innerHTML=compText;
         setTimeout(() => {document.getElementById('lakersstat').innerHTML="";}, 4000);
-
+        
+        //Celtics selection===================
     } else {
         this.src = celticsGameArray[index].image;
         cCardInPlay.push(celticsGameArray[index]);
@@ -215,7 +223,7 @@ function clickCard() {
 
         //DOES NOT DISPLAY POINTS/RINGS, ETC. WHEN WILD CARD IS SELECTED=========================
         if(cc.name == "3 pointer" || cc.name == "Block" || cc.name == "Dunk") compText="";
-
+        //Celtics render and setTime out
         console.log(cc.name + "" + compText);
         document.getElementById('celticsstat').innerText = cc.name + " " + compText
         gameObject.innerHTML=compText;
@@ -243,7 +251,7 @@ function clickCard() {
   }
 
 
-
+// Who scored between the two cards flipped=============== 
 function checkScore() {
 
     let whoScored=document.getElementById('whoscored')
@@ -276,7 +284,7 @@ function checkScore() {
         gameObject.turn="player2";
         
     } else {
-        scoreText=" No Score";   //ADDED FOR TIE CARDS
+        scoreText=" No Score";   //ADDED FOR TIE CARDS==========
         if (gameObject.turn == "player1") {
             gameObject.turn = "player2";
         } else {
@@ -285,10 +293,10 @@ function checkScore() {
     }
 
     console.log("Current Score: Lakers - " + gameObject.player1Score + "  Celtics - " + gameObject.player2Score);
+    //Renders total running score
     document.getElementById("scoreText").innerText = "Score: Lakers - " + gameObject.player1Score + "  Celtics - " + gameObject.player2Score
     lCardInPlay=[];
     cCardInPlay=[];
-    
     whoScored.innerHTML=scoreText;
     setTimeout(() => {document.getElementById("whoscored").innerHTML="";}, 5000);
 
@@ -321,7 +329,7 @@ function checkScore() {
 
             gameOverDiv.innerHTML="Final Score: Lakers - " + gameObject.player1Score + " / Celtics - " + gameObject.player2Score;
             gameOverDiv.innerHTML+="<br><br>";
-
+            //created box for final score
             let x=winWidth/2-divWidth/2 + "px;";
             let y=winHeight/2-divHeight/2 + "px;";
 
@@ -339,7 +347,7 @@ function checkScore() {
 
     }
 }
-
+// Starts new game==========
 function startNewGame() {
     
     gameObject={};
@@ -351,7 +359,7 @@ function startNewGame() {
     resetBoard();
 
 }
-
+//Global random math function=====
 function rnd(lower, upper) {
     const range = upper - lower + 1;
     return Math.floor(Math.random() * range + lower);
