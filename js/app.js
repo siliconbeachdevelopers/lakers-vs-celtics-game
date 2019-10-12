@@ -1,39 +1,38 @@
 const lakersArray = [
-    {name: "Kareem Abdul-Jabbar", championships: 6,  points: 38787, allstars: 15, image: "../images/lakers/kareem.jpg", score: 2}, 
-    {name: "Magic Johnson", championships: 5,  points: 17707, allstars: 12, image: "../images/lakers/magic1.png", score: 2},
-    {name: "Kobe Bryant", championships: 5,  points: 33643, allstars: 18,  image: "../images/lakers/kobebryant.jpg", score: 2},
-    {name: "Jerry West", championships: 5,  points: 25192, allstars: 14, image: "../images/lakers/jerrywest.jpg", score: 2},
-    {name: "James Worthy", championships: 3,  points: 16320, allstars: 7, image: "../images/lakers/jamesworthy.png", score: 2},
-    {name: "Robert Horry", championships: 7,  points: 7715, allstars: 0, image: "../images/lakers/horry.jpeg", score: 2},
-    {name: "A.C. Green", championships: 5,  points: 12355, allstars: 10, image: "../images/lakers/acgreen.jpg", score: 2},
-    {name: "LeBron James", championships: 4,  points: 32543, allstars: 10, image: "../images/lakers/labron.jpg", score: 2},
-    {name: "Shaquille O'Neal",championships: 4,  points:28596, allstars: 15, image: "../images/lakers/shaq.png", score: 2},
-    {name: "George Mikan",championships: 7,  points: 10156, allstars: 4, image: "../images/lakers/mikan.png", score: 2},
-    {name: "Elgin Baylor",championships: 1,  points: 23149, allstars: 11, image: "../images/lakers/baylor.jpeg", score: 2},
-    {name: "Wilt Chamberlain",championships: 2 ,  points: 31419, allstars: 13, image: "../images/lakers/wilt.jpg", score: 2},
-    {name: "3 pointer",championships: 100, points: 100000, allstars: 100, image:"../images/lakers/magicbird.jpg", score: 3}, 
-    {name: "Block", championships: 100, points: 100000, allstars: 100, image: "../images/lakers/wildcard.jpg", score: 2 },
-    {name: "Dunk", championships: 100, points: 100000, allstars: 100, image:  "../images/lakers/wildcard.jpg", score: 2 },
+    {name: "Kareem Abdul-Jabbar", championships: 6,  points: 38787, allstars: 15, image: "./images/kareem.jpg", score: 2}, 
+    {name: "Magic Johnson", championships: 5,  points: 17707, allstars: 12, image: "./images/magic1.png", score: 2},
+    {name: "Kobe Bryant", championships: 5,  points: 33643, allstars: 18,  image: "./images/kobebryant.jpg", score: 2},
+    {name: "Jerry West", championships: 5,  points: 25192, allstars: 14, image: "./images/jerrywest.jpg", score: 2},
+    {name: "James Worthy", championships: 3,  points: 16320, allstars: 7, image: "./images/jamesworthy.png", score: 2},
+    {name: "Robert Horry", championships: 7,  points: 7715, allstars: 0, image: "./images/horry.jpeg", score: 2},
+    {name: "A.C. Green", championships: 5,  points: 12355, allstars: 10, image: "./images/acgreen.jpg", score: 2},
+    {name: "LeBron James", championships: 4,  points: 32543, allstars: 10, image: "./images/labron.jpg", score: 2},
+    {name: "Shaquille O'Neal",championships: 4,  points:28596, allstars: 15, image: "./images/shaq.png", score: 2},
+    {name: "George Mikan",championships: 7,  points: 10156, allstars: 4, image: "./images/mikan.png", score: 2},
+    {name: "Elgin Baylor",championships: 1,  points: 23149, allstars: 11, image: "./images/baylor.jpeg", score: 2},
+    {name: "Wilt Chamberlain",championships: 2 ,  points: 31419, allstars: 13, image: "./images/wilt.jpg", score: 2},
+    {name: "3 pointer",championships: 100, points: 100000, allstars: 100, image:"./images/magicbird.jpg", score: 3}, 
+    {name: "Block", championships: 100, points: 100000, allstars: 100, image: "./images/wildcard.jpg", score: 2 },
+    {name: "Dunk", championships: 100, points: 100000, allstars: 100, image:  "./images/wildcard.jpg", score: 2 },
     
 
 ]
 
 const celticsArray = [
-    {name: "Bill Russell",championships: 11,  points: 14522, allstars: 12, image: "../images/celtics/russell.jpg", score: 2}, 
-    {name: "Larry Bird",championships: 3,  points: 21791, allstars: 12, image: "../images/celtics/larrybird.png", score: 2}, 
-    {name: "John Havlicek",championships: 8,  points:26395, allstars: 13, image: "../images/celtics/havlicek.png", score: 2}, 
-    {name: "Bob Cousy",championships: 6,  points: 16960, allstars: 13, image: "../images/celtics/cousy.jpg", score: 2}, 
-    {name: "Paul Peirce",championships: 1,  points: 26397, allstars: 10, image: "../images/celtics/peirce.png", score: 2}, 
-    {name: "Kevin McHale", championships: 3,  points: 23334, allstars: 7, image: "../images/celtics/mchale.jpeg", score: 2}, 
-    {name: "Dennis Johnson", championships:3,  points: 15535, allstars: 5, image: "../images/celtics/djohnson.jpeg", score: 2}, 
-    {name: "Robert Parrish",championships:4,  points: 23334, allstars: 9, image: "../images/celtics/parrish.jpg", score: 2}, 
-    {name: "Sam Jones",championships:10,  points: 15411, allstars: 5, image: "../images/celtics/samjones.jpeg", score: 2}, 
-    {name: "Dave Cowens",championships:2,  points: 13516, allstars: 8, image: "../images/celtics/cowens.jpeg", score: 2}, 
-    {name: "Tom Heinsohn",championships:7,  points: 12194, allstars: 6, image: "../images/celtics/heinsohn.jpeg", score: 2}, 
-    {name: "Kevin Garnett",championships:1,  points: 26071, allstars: 15, image: "../images/celtics/garnett.jpg", score: 2},
-    {name: "3 pointer", championships: 100, points: 100000, allstars: 100, image: "../images/lakers/magicbird.jpg", score: 3},
-    {name: "Block", championships: 100, points: 100000, allstars: 100, image: "../images/celtics/celticblockcard.jpg", score: 2},
-    {name: "Dunk", championships: 100, points: 100000, allstars: 100, image:  "../images/celtics/celticdunk.jpg", score: 2},
+    {name: "Bill Russell",championships: 11,  points: 14522, allstars: 12, image: "./images/russell.jpg", score: 2}, 
+    {name: "Larry Bird",championships: 3,  points: 21791, allstars: 12, image: "./images/havlicek.png", score: 2}, 
+    {name: "Bob Cousy",championships: 6,  points: 16960, allstars: 13, image: "./images/cousy.jpg", score: 2}, 
+    {name: "Paul Peirce",championships: 1,  points: 26397, allstars: 10, image: "./images/peirce.png", score: 2}, 
+    {name: "Kevin McHale", championships: 3,  points: 23334, allstars: 7, image: "./images/mchale.jpeg", score: 2}, 
+    {name: "Dennis Johnson", championships:3,  points: 15535, allstars: 5, image: "./images/djohnson.jpeg", score: 2}, 
+    {name: "Robert Parrish",championships:4,  points: 23334, allstars: 9, image: "./images/parrish.jpg", score: 2}, 
+    {name: "Sam Jones",championships:10,  points: 15411, allstars: 5, image: "./images/samjones.jpeg", score: 2}, 
+    {name: "Dave Cowens",championships:2,  points: 13516, allstars: 8, image: "./images/cowens.jpeg", score: 2}, 
+    {name: "Tom Heinsohn",championships:7,  points: 12194, allstars: 6, image: "./images/heinsohn.jpeg", score: 2}, 
+    {name: "Kevin Garnett",championships:1,  points: 26071, allstars: 15, image: "./images/garnett.jpg", score: 2},
+    {name: "3 pointer", championships: 100, points: 100000, allstars: 100, image: "./images/magicbird.jpg", score: 3},
+    {name: "Block", championships: 100, points: 100000, allstars: 100, image: "./images/celticblockcard.jpg", score: 2},
+    {name: "Dunk", championships: 100, points: 100000, allstars: 100, image:  "./images/celticdunk.jpg", score: 2},
     //{name: "celticcardback",championships: 99, image: "../images/celtics/celticcardback.jpg"}
 
 
@@ -62,8 +61,8 @@ let celticsGameArray=[];
 let lakerChampionships = null;
 let celticChampionships = null; 
 //Two Card Backs to start game=========================================
-let lakerLogo="../images/lakers/logo.jpg";
-let celticsLogo="../images/celtics/celticcardback.jpg";
+let lakerLogo="./images/logo.jpg";
+let celticsLogo="./images/celticcardback.jpg";
 
 let gameObject={};
     //.gameType
