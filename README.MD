@@ -41,8 +41,8 @@ If a player flips a dunk card. "you got dunked on!" opposing players card is nul
 
 At the end of four quarters a box will pop up on the screen showing the final score for each team.
 
-
-Git Hub Repository https://github.com/siliconbeachdevelopers
+Click the link below to play 
+My game link  https://siliconbeachdevelopers.github.io/bballgame/
 
 
 
