@@ -294,7 +294,7 @@ function checkScore() {
 
     console.log("Current Score: Lakers - " + gameObject.player1Score + "  Celtics - " + gameObject.player2Score);
     //Renders total running score
-    document.getElementById("scoreText").innerText = "Score: Lakers - " + gameObject.player1Score + "  Celtics - " + gameObject.player2Score
+    document.getElementById("scoreText").innerText = " Lakers  " +  "" + gameObject.player1Score + "  Celtics " + gameObject.player2Score
     lCardInPlay=[];
     cCardInPlay=[];
     whoScored.innerHTML=scoreText;

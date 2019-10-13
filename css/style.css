@@ -172,16 +172,18 @@ h1 {
     margin-left: 350px;
 }
 #rings{
-    margin-left: 200px;
+    margin-left: 150px;
 }
 #scoreText{
     display: inline-block;
+    background-color: rgb(153, 51, .5);
+    border: 2px solid black;
     font-size: 60px;
     margin-left: 325px;
     font-weight: 800;
     position: absolute;
     top: 50rem;
-    left: 10rem;
+    left: 16rem;
     
    
 }
