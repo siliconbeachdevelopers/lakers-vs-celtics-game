@@ -20,7 +20,7 @@ const lakersArray = [
 
 const celticsArray = [
     {name: "Bill Russell",championships: 11,  points: 14522, allstars: 12, image: "./images/russell.jpg", score: 2}, 
-    {name: "Larry Bird",championships: 3,  points: 21791, allstars: 12, image: "./images/havlicek.png", score: 2}, 
+    {name: "Larry Bird",championships: 3,  points: 21791, allstars: 12, image: "./images/larrybird.png", score: 2}, 
     {name: "Bob Cousy",championships: 6,  points: 16960, allstars: 13, image: "./images/cousy.jpg", score: 2}, 
     {name: "Paul Peirce",championships: 1,  points: 26397, allstars: 10, image: "./images/peirce.png", score: 2}, 
     {name: "Kevin McHale", championships: 3,  points: 23334, allstars: 7, image: "./images/mchale.jpeg", score: 2}, 
@@ -125,8 +125,8 @@ function createBoard() {
         celticsTemp.splice(cRandom,1);
     }
 
-    let lCardInPlay=[];
-    let cCardInPlay=[];
+    //let lCardInPlay=[];
+    //let cCardInPlay=[];
 }
 //This function resets the board after each quarter============================
 //testing purposes
