@@ -42,7 +42,7 @@ If a player flips a dunk card. "you got dunked on!" opposing players card is nul
 At the end of four quarters a box will pop up on the screen showing the final score for each team.
 
 Click the link below to play 
-My game link  https://siliconbeachdevelopers.github.io/bballgame/
+My game link   https://siliconbeachdevelopers.github.io/lakers-vs-celtics-game/
 
 
 
