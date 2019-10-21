@@ -3,21 +3,21 @@ html{
     border-style: solid;
     border-image: black;
 }
+
 body {
     background-image: url("../images/basketball.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
-  }
+}
   
 .logo1{
     font-family:'Galada', cursive;
     color: #FDB927;;
     font-size: 150px;
     text-shadow: 5px 5px 2px rgb(0,0,0,1);
-    margin-left: 200px;
-    
+    margin-left: 200px; 
 }
 
 .logo3{
@@ -39,7 +39,6 @@ h1 {
 #lakerscontainer {
     display: flex;
     margin-left: 25px;
-   
 }
 
 #court {
@@ -57,8 +56,7 @@ h1 {
     width: 125px;
     height: 175px;
     margin-top: 10px;
-    border: 4px solid purple;
-    
+    border: 4px solid purple; 
 }
 
 .celtic {
@@ -67,58 +65,57 @@ h1 {
     height: 175px;
     margin-top: 10px;
     border: 4px solid green;
-    } 
+} 
     
 .lakers2 {
    margin-right: 100px;
    margin-top: 100px;
-  
-  
 }
 
 #card2{
    padding-top: 30px
 }
+
 #card3{
     padding-top:30px
 }
+
 .lakers3 {
     margin-right: 100px;
-    margin-top: 250px;
-   
+    margin-top: 250px; 
  }
-
-
-
-
 
 .celtics2{
     margin-left: 100px;
     margin-top: 250px
 
 }
+
 .celtics3{
     margin-left: 100px;
     margin-top: 100px
 
 }
+
 #cCard4{
     padding-top: 30px;
- }
+}
+
  #cCard5{
      padding-top:30px;
  }
- .button {
+
+.button {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-  }
+}
   
-  .button:hover {
+.bu tton:hover {
     background-color: black; /* Green */
     color: white;
-  }
+}
   
-  #rings, #points, #allstars{
+#rings, #points, #allstars{
     background: rgb(153, 51, .5); 
     border: none;
     color: black;
@@ -131,24 +128,22 @@ h1 {
     transition-duration: 0.4s;
     border: 2px solid black;
 }
+
 #lakersstat{
     font-size: 45px;
     font-weight:700;
     color: #FDB927;
     text-shadow: 5px 5px 2px rgb(0,0,0,1);
-    
-
-   ;
 }
 
 #celticsstat{
-  color: #007A33;
-  font-size: 45px;
-  position: absolute;
- right:30rem;
- bottom:38rem;
- font-weight:700;
- text-shadow: 5px 5px 6px rgb(0,0,0,1);
+    color: #007A33;
+    font-size: 45px;
+    position: absolute;
+    right:30rem;
+    bottom:38rem;
+    font-weight:700;
+    text-shadow: 5px 5px 6px rgb(0,0,0,1);
 }   
 
 #whoscored{
@@ -160,20 +155,20 @@ h1 {
      position: absolute;
     top: 40rem;
     left: 2rem;
-   
-    
-    
 } 
 
 #points{
     margin-left: 375px;
 }
+
 #allstars {
     margin-left: 350px;
 }
+
 #rings{
     margin-left: 150px;
 }
+
 #scoreText{
     display: inline-block;
     background-color: rgb(153, 51, .5);
@@ -184,11 +179,10 @@ h1 {
     position: absolute;
     top: 50rem;
     left: 16rem;
-    
-   
 }
+
 #quarterdiv{
-font-size: 5em;
+    font-size: 5em;
 }
 
 #start1{
